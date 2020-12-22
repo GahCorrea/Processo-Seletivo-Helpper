@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" />
+    <script src="validaCEP.js"></script>
+    <script src="cadastroCliente.js"></script>
+    <title>Formulário de Cadastro de Clientes</title>
+</head>
+
+<body>
+    <div class="row">
+        <div class="col-12 col-s-" 12>
+            <form name="Cadastro" id="cadastro" action="cadastrar" method="get">
+                <fieldset>
+                    <legend>Informações do Cliente</legend>
+                    <p>
+                        <label>Nome: </label>&nbsp;&nbsp;<input name="Nome Cliente" id="nomeCli" type="text" size="40" placeholder="Digite o nome do cliente..." />
+                    </p>
+                    <p>
+                        <label>E-mail: </label>&nbsp;&nbsp;<input name="E-mail Cliente" id="emailCli" type="email" size="40" placeholder="Digite o e-mail do cliente..." />
+                    </p>
+                    <p>
+                        <label>CPF ou CNPJ: </label>&nbsp;&nbsp;<input name="CPF/CNPJ Cliente" id="cpf_cnpjCli" type="text" size="30" placeholder="Apenas números..." />
+                    </p>
+                    <p>
+                        <label>Telefone: </label>&nbsp;&nbsp;<input name="Telefone Cliente" id="telCli" type="text" size="25" placeholder="Apenas números..." />
+                    </p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Endereço do Cliente</legend>
+                    <p>
+                        <label>CEP: </label>&nbsp;&nbsp;<input name="CEP Cliente" id="cepCli" type="text" size="20" maxlength="9" onblur="pesquisaCep(this.value)" placeholder="Digite o CEP do cliente..." />
+                    </p>
+                    <p>
+                        <label>Logradouro: </label>&nbsp;&nbsp;<input name="Rua Cliente" id="ruaCli" type="text" size="50" placeholder="Logradouro..." />
+                    </p>
+                    <p>
+                        <label>Número: </label>&nbsp;&nbsp;<input name="Número Cliente" id="numCli" type="number" placeholder="Número..." />
+                    </p>
+                    <p>
+                        <label>Bairro: </label>&nbsp;&nbsp;<input name="Bairro Cliente" id="bairroCli" type="text" placeholder="Bairro..." />
+                    </p>
+                    <p>
+                        <label>Cidade: </label>&nbsp;&nbsp;<input name="Cidade Cliente" id="cidadeCli" type="text" size="25" placeholder="Cidade..." />
+                    </p>
+                    <p>
+                        <label>Estado: </label>&nbsp;&nbsp;<input name="Estado Cliente" id="estadoCli" type="text" size="10" placeholder="Estado..." />
+                    </p>
+                </fieldset>
+
+                <div id="buttons">
+                    <p>
+                        <input name="Cadastrar" id="cadastrar" type="button" value="Cadastrar Cliente" onclick="createClient()" />
+                        &nbsp;
+                        <input name="Pesquisar" id="pesquisar" type="button" value="Pesquisar Cliente" onclick="searchClient()" />
+                        &nbsp;
+                        <input name="Excluir" id="excluir" type="button" value="Excluir Cliente" onclick="removeClient()" />
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
